@@ -1,0 +1,37 @@
+{
+    "basic_features": [
+        "Price",
+        "title_length",
+        "IsUserLoggedOn",
+        "common_params_cnt"
+    ],
+    "user_features": [
+        "user_total_searches",
+        "user_cat_diversity",
+        "user_total_impressions",
+        "user_total_clicks",
+        "hist_user_total_visits",
+        "user_HCTR"
+    ],
+    "cat_features": [
+        "cat_total_searches",
+        "cat_mean_price",
+        "cat_total_clicks",
+        "cat_total_impressions",
+        "cat_HCTR"
+    ],
+    "ad_features": [
+        "ad_total_impressions",
+        "ad_total_clicks",
+        "ad_HCTR"
+    ],
+    "user_ad_features": [
+        "times_user_has_seen_ad"
+    ],
+    "categorical": [
+        "Position",
+        "CategoryID_a",
+        "blank_query",
+        "categories_match"
+    ]
+}

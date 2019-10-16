@@ -1,0 +1,8 @@
+# ignore pickles
+pickle/
+
+# ignore .DS_Store
+.DS_Store
+
+# ignore database
+*.sqlite
