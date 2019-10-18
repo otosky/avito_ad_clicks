@@ -43,7 +43,7 @@ SQLite, at the expense of disk-space.
 One issue with this is that it takes quite some time to generate these sub-tables.  We're talking HOURS here - 9.5 hours on my aging machine, YMMV.  
 
 If watching paint dry is not your thing :nail_care:, I encourage you to run the 
-`create_tables.py` script to expedite this process.  Set it up in the background, or 
+`batch_create_tables.py` script to expedite this process.  Set it up in the background, or 
 overnight, and it will build all the sub-tables for you.  *The commands are still 
 in the notebooks so that you can follow along and understand the table schemas.*
 
