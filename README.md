@@ -13,8 +13,11 @@ You'll want to have at least 200GB of free disk space.
 Environment:
 - python 3.7.3 
 - scikit-learn 0.21.2
+    - Probably the only hard-requirement: you'll need to have sklearn v.0.20
+at the very least, since I utilize the `make_column_transformer` function.
 - numpy 1.16.2
 - pandas 0.24.2
+- sqlite 3.27.2
 - xgboost 0.90 - not necessary, but including version details for reference
 
 ## Data Source
@@ -37,15 +40,15 @@ to re-download/de-compress the dataset if the sqlite file gets corrupted somehow
 My approach was to try and conserve in-memory use by creating many sub-tables in
 SQLite, at the expense of disk-space. 
 
-One issue with this is that it takes quite some time to generate these sub-tables.  We're talking HOURS here.  
+One issue with this is that it takes quite some time to generate these sub-tables.  We're talking HOURS here - 9.5 hours on my aging machine, YMMV.  
 
 If watching paint dry is not your thing :nail_care:, I encourage you to run the 
 `create_tables.py` script to expedite this process.  Set it up in the background, or 
 overnight, and it will build all the sub-tables for you.  *The commands are still 
 in the notebooks so that you can follow along and understand the table schemas.*
 
-In a terminal, `cd` to the directory where `create_tables.py` is contained and execute:
-`python create_tables.py`
+In a terminal, `cd` to the directory where you cloned the repo and execute:
+`python batch_create_tables.py`
 
 ## Notebook Structure
 
