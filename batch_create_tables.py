@@ -46,7 +46,7 @@ INSERT INTO SearchInfo
 DROP TABLE old_si;
 
 -- set AdID index on trainSearchStream
-CREATE INDEX AdID_Index_tss ON trainSearchStream(AdID, SearchID);
+CREATE INDEX AdID_Index_tss ON trainSearchStream(AdID, SearchID, IsClick);
 '''
 
 search2 = '''
