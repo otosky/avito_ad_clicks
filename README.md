@@ -55,8 +55,8 @@ In a terminal, `cd` to the directory where you cloned the repo and execute:
 `1_eda_sql.ipynb` covers basic EDA using SQL on the dataset.
 
 `2_split_data_baseline.ipynb` covers the general strategy for splitting the dataset
-into training, validation, and test sets.  It also establishes a baseline Logistic Regression
-model with just a handful of basic features.
+into training, walk-forward validation, and test sets.  It also establishes a 
+baseline Logistic Regression model with just a handful of basic features.
 
 `3_feature_engineering.ipynb` covers feature engineering and performs model validation on a 
 more robust feature set.  Final evaluation on a hold-out test set is included, as well as,
@@ -67,4 +67,21 @@ or :moneybag:.
 
 ## Results
 
-Note final feature-set, model, time-diagnostics, and eval metric on hold-out
+Engineered Features can be found [here](link to features.md)
+
+I used AUC as an evaluation metric.  It's quite common for CTR problems since:
+- we elide the major class imbalance in some sense, by not having to specify a decision threshold
+- we can interpret the score as well the model is ranking positive vs. negative classes
+  - the odds of a click are so low that it's most important for the model to order the *most likely*
+  ads to be clicked at the top and the least likely at the bottom
+
+Models were validated on the last 6 searches **prior to** their final search, in a walk-forward
+validation scheme.  Against basic Decision Trees and Random Forest, Logistic Regression
+performed just about as well, but more importantly - at a fraction of the fit/predict time.
+That made Logistic Regression the clear winner since CTR factors into pricing on 
+ad-auction marketplaces, decisions that need to operate in near real-time.
+
+The hold-out test set was every User's final search within the window of the last 
+10 days of the dataset:  
+
+Final AUC using Logistic Regression = 0.7553
