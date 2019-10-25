@@ -67,7 +67,7 @@ or :moneybag:.
 
 ## Results
 
-Engineered Features can be found [here](link to features.md)
+Engineered Features are documented [here](https://github.com/otosky/avito_ad_clicks/blob/master/features.md)
 
 I used AUC as an evaluation metric.  It's quite common for CTR problems since:
 - we elide the major class imbalance in some sense, by not having to specify a decision threshold
@@ -84,4 +84,4 @@ ad-auction marketplaces, decisions that need to operate in near real-time.
 The hold-out test set was every User's final search within the window of the last 
 10 days of the dataset:  
 
-Final AUC using Logistic Regression = 0.7553
+**Final AUC using Logistic Regression = 0.7553**
